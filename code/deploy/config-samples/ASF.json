@@ -1,0 +1,6 @@
+{
+	"Headless": true,
+	"IPCPassword": "<ASF_IPC_PASSWORD>",
+	"LoginLimiterDelay": 15,
+	"LoginLimiterThreshold": 2
+}

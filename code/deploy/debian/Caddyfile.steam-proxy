@@ -1,0 +1,15 @@
+{
+	admin off
+	auto_https off
+}
+
+https://steamcommunity.com, https://www.steamcommunity.com, https://store.steampowered.com {
+	bind 127.0.0.1
+	tls /opt/steam-proxy/steamcommunity.crt /opt/steam-proxy/steamcommunity.key
+	reverse_proxy https://198.51.100.7 {
+		transport http {
+			tls
+			tls_insecure_skip_verify
+		}
+	}
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=Steam Community Local Reverse Proxy (SNI bypass)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=XDG_DATA_HOME=/opt/steam-proxy/data
+Environment=XDG_CONFIG_HOME=/opt/steam-proxy/config
+ExecStart=/usr/bin/caddy run --config /opt/steam-proxy/Caddyfile --adapter caddyfile
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
